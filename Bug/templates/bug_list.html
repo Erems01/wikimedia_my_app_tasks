@@ -1,0 +1,11 @@
+# html template with a simple list of bug_list
+
+<!-- bugs/templates/bug_list.html -->
+<h2>List of Bugs</h2>
+<ul>
+    {% for bug in bugs %}
+        <li>
+            <a href="{% url 'view_bug' bug.id %}">{{ bug.description }}</a>
+        </li>
+    {% endfor %}
+</ul>

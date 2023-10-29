@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# Links to the detail page of each bug
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('register-bug/', views.register_bug, name='register_bug'),
+    path('bug/<int:bug_id>/', views.view_bug, name='view_bug'),
+    path('bug-list/', views.bug_list, name='bug_list'),
+    path("admin/", admin.site.urls), 
 ]
